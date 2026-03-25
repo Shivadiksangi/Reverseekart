@@ -1,0 +1,15 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: reversekart-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: reversekart
+    volumes:
+      - reversekart_mongo_data:/data/db
+
+volumes:
+  reversekart_mongo_data:
+
